@@ -66,7 +66,11 @@ void dealloc(Node* head)
 //   Add any helper functions or
 //   function object struct declarations
 // -----------------------------------------------
-
+struct RemoveEven{
+    bool operator()(int value){
+        return value % 2 == 0;
+    }
+};
 
 
 
@@ -86,7 +90,14 @@ int main(int argc, char* argv[])
     print(head);
 
     // Test out your linked list code
+    RemoveEven pred;
 
+    head = llfilter(head, pred);
+
+    cout << "Filtered list: ";
+    print(head);
+
+    dealloc(head);
 
 
     
