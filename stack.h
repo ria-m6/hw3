@@ -18,19 +18,19 @@ public:
       return std::vector<T>::size();
     }
     void push(const T& item){
-      return std::vector<T>::push_back();
+      return std::vector<T>::push_back(item);
     }
     void pop(){
       if(empty()){
-        throws std::underflow_error("Stack is empty");
+        throw std::underflow_error("Stack is empty");
       }
-      std::vector<T>::pop_back();
+      return std::vector<T>::pop_back();
     }  // throws std::underflow_error if empty
     const T& top() const{
       if(empty()){
-        throws std::underflow_error("Stack is empty");
+        throw std::underflow_error("Stack is empty");
       }
-      std::vector<T>::back();
+      return std::vector<T>::back();
     } // throws std::underflow_error if empty
     // Add other members only if necessary
 };
