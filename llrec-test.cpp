@@ -72,6 +72,10 @@ struct RemoveEven{
     }
 };
 
+bool isOdd(int x) {
+    return x % 2 != 0;
+}
+
 
 
 
@@ -86,18 +90,39 @@ int main(int argc, char* argv[])
     // Feel free to update any code below this point
     // -----------------------------------------------
     Node* head = readList(argv[1]);
-    cout << "Original list: ";
+    // cout << "Original list: ";
+    // print(head);
+
+    // // Test out your linked list code
+    // RemoveEven pred;
+
+    // head = llfilter(head, pred);
+
+    // cout << "Filtered list: ";
+    // print(head);
+
+    // dealloc(head);
+
+    Node* smaller = nullptr;
+    Node* larger = nullptr;
+
+    cout << "Original List: ";
     print(head);
 
-    // Test out your linked list code
-    RemoveEven pred;
+    llpivot(head, smaller, larger, 5);
 
-    head = llfilter(head, pred);
+    cout << "Smaller List: ";
+    print(smaller);
+    cout << "Larger List: ";
+    print(larger);
 
-    cout << "Filtered list: ";
-    print(head);
+    Node* filtered = llfilter(smaller, isOdd);
 
-    dealloc(head);
+    cout << "Filtered (even numbers only): ";
+    print(filtered);
+
+    dealloc(filtered);
+    dealloc(larger);
 
 
     
