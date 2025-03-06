@@ -146,7 +146,7 @@ template <typename T, typename PComparator>
 void Heap<T, PComparator>::heapifyDown(size_t index) {
   while (true) {
     size_t best = index;
-    for (size_t i = 1; i <= m_arity; i++) {
+    for (size_t i = 1; i <= static_cast<size_t>(m_arity); i++) {
       size_t child = m_arity * index + i;
       if (child < data.size() && comp(data[child], data[best])) {
         best = child;
