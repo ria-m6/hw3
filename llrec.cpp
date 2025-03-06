@@ -30,5 +30,5 @@ void llpivot(Node *&head, Node *&smaller, Node *&larger, int pivot){
     }
   }
   head=nextNode;
-  llpivot(nextNode, smaller, larger, pivot);
+  llpivot(head, smaller, larger, pivot);
 }
